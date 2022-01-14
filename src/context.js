@@ -13,7 +13,7 @@ const AppProvider = ({ children }) => {
     const accounts = await web3.eth.requestAccounts();
     setAccount(accounts[0]);
     const balances = await web3.eth.getBalance(accounts[0])
-    console.log('eth balance', balances)
+    // console.log('eth balance', balances)
     setBalance(balances)
   }
 
