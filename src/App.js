@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import MainPage from './MainPage';
+import BuyToken from './BuyToken';
+import Profile from './Profile';
+// import Error from './Error';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/buytoken/:account" element={<BuyToken />} />
+        <Route path="/profile" element={<Profile />} />
+        {/* <Route path="*" element={<Error />} /> */}
+      </Routes>
+    </Router>
+  )
 }
 
 export default App;
